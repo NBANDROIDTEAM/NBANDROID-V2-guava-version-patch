@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+      <groupId>sk.arsi.netbeans.gradle.android</groupId>
+    <artifactId>Gradle-Android-support-Guava-patch</artifactId>
+    <version>01.00</version>
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>org.checkerframework</groupId>
+            <artifactId>checker</artifactId>
+            <version>2.5.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>com.android.tools</groupId>
+            <artifactId>sdk-common</artifactId>
+            <version>${version.android}</version>
+            <type>jar</type>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>netbeans</id>
+            <name>NetBeans</name>
+            <url>http://bits.netbeans.org/nexus/content/groups/netbeans/</url>
+        </repository>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>google-android-android-tools</id>
+            <name>google</name>
+            <url>https://maven.google.com</url>
+        </repository>
+    </repositories>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <version.android>26.2.0 </version.android>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <finalName>sdklib</finalName>     
+                    <outputDirectory>../NBANDROID-V2/src/main/patches</outputDirectory>              
+                </configuration>
+            </plugin>  
+        </plugins>
+    </build>
+    
+</project>
